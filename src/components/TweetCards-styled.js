@@ -35,13 +35,13 @@ export const P = styled.p`
   }
 `;
 
-export const SvgLabel = styled.svg`
+export const ImgLogo = styled.img`
   position: absolute;
   top: 20px;
   left: 20px;
 `;
 
-export const SvgBoy = styled.svg`
+export const ImgBoy = styled.img`
   position: absolute;
   top: 178px;
   bottom: 202px;
@@ -50,7 +50,7 @@ export const SvgBoy = styled.svg`
   margin: auto;
   z-index: 999;
 `;
-export const SvgRectangle = styled.svg`
+export const ImgRectangle = styled.img`
   position: absolute;
   top: 210px;
   bottom: 238px;
@@ -80,6 +80,7 @@ export const Btn = styled.button`
   line-height: 22px;
 
   text-transform: uppercase;
+  cursor: pointer;
 
   color: #373737;
 `;

@@ -1,9 +1,8 @@
-// import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
-// export const Ul = styled.ul`
-//   justify-content: center;
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 20px;
-//   padding: 0;
-// `;
+export const LinkNav = styled(NavLink)`
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 15px;
+`;

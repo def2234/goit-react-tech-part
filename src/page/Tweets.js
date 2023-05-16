@@ -1,51 +1,45 @@
 import TweetCard from 'components/TweetCard';
 
 import { useEffect, useState } from 'react';
-import { GetUsers } from 'usersApi/UsersApi';
 
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTweets } from 'redux/operationTweets';
+import { getError, getTweets } from 'redux/selectors';
+import { LinkNav } from './Tweets-styled';
 
 function Tweets() {
-  const [tweets, setTweets] = useState(
-    JSON.parse(localStorage.getItem('tweets')) || []
-  );
   const [page, setPage] = useState(1);
-  const [IsLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const error = useSelector(getError);
+  const tweets = useSelector(getTweets);
+  // const page = useSelector(getPage);
 
   useEffect(() => {
-    setIsLoading(true);
-    GetUsers(page)
-      .then(response => {
-        console.log(response);
-        setTweets(prevTweets => [...prevTweets, ...response.data]);
-        setIsLoading(false);
-      })
-      .catch(error => {
-        console.log(error);
-        setIsLoading(false);
-      });
-  }, [page]);
+    if (tweets.length === 0) {
+      dispatch(fetchTweets(page));
+    }
+  }, [dispatch, tweets, page]);
+
+  useEffect(() => {
+    if (page === 1) {
+      return;
+    }
+    dispatch(fetchTweets(page));
+  }, [dispatch, page]);
 
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1);
   };
 
-  useEffect(() => {
-    const storedTweets = localStorage.getItem('tweets');
-    if (storedTweets) {
-      setTweets(JSON.parse(storedTweets));
-    }
-  }, []);
-
   return (
     <div className="app">
+      {error && <h1>Oops, something went wrong!</h1>}
       <h1>Tweet Cards</h1>
-      <Link to="/">Back</Link>
+      <LinkNav to="/">Back</LinkNav>
 
-      <TweetCard tweets={tweets} setTweets={setTweets} />
-
-      {IsLoading ? (
-        <p>Loading...</p>
+      <TweetCard />
+      {tweets.length === 15 ? (
+        <h1>The maximum number of requests has been reached!</h1>
       ) : (
         <button onClick={handleLoadMore}>Load More</button>
       )}

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navigation from "./navigation/Navigation";
 import HomePage from "page/HomePage";
 import Tweets from "page/Tweets";
+import { NotFaund } from "./NotFaund";
 
 export const App = () => {
   return (
@@ -12,7 +13,7 @@ export const App = () => {
     <Route path="/" element={<Navigation />}>
     <Route index element={<HomePage />} />
      <Route path='/tweets'  element={<Tweets/>}/>
-     <Route path='*' element={<HomePage/>} />
+     <Route path='*' element={<NotFaund/>} />
     </Route>
     
   </Routes>
