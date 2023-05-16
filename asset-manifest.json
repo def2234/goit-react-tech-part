@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/goit-react-tech-part/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-tech-part/static/js/main.b05d8bb0.js",
+    "main.js": "/goit-react-tech-part/static/js/main.b57cb856.js",
+    "static/media/Boy.svg": "/goit-react-tech-part/static/media/Boy.8d074c621584162b1e45a2c0fd752bd1.svg",
     "static/media/picture.png": "/goit-react-tech-part/static/media/picture.032662a2a907475127d7.png",
-    "static/media/svgSprite.svg": "/goit-react-tech-part/static/media/svgSprite.46d15ff500df3e602cd9dbc9081ce81e.svg",
+    "static/media/Logo.svg": "/goit-react-tech-part/static/media/Logo.e917114d7945c04c85a8946a331d28b6.svg",
+    "static/media/rectangle.svg": "/goit-react-tech-part/static/media/rectangle.3dc889ed819cc56238bce43c61f74ccc.svg",
     "index.html": "/goit-react-tech-part/index.html",
     "main.7acaea2f.css.map": "/goit-react-tech-part/static/css/main.7acaea2f.css.map",
-    "main.b05d8bb0.js.map": "/goit-react-tech-part/static/js/main.b05d8bb0.js.map"
+    "main.b57cb856.js.map": "/goit-react-tech-part/static/js/main.b57cb856.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.b05d8bb0.js"
+    "static/js/main.b57cb856.js"
   ]
 }
